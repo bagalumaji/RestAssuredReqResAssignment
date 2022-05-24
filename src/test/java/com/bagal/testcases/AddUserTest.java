@@ -2,7 +2,7 @@ package com.bagal.testcases;
 
 import com.bagal.assertj.ResponseAssert;
 import com.bagal.assertj.UserResponseAssert;
-import com.bagal.constants.FrameworkConstants;
+import com.bagal.constants.ReqResConstants;
 import com.bagal.datasupplier.DataSuppliers;
 import com.bagal.pojo.User;
 import com.bagal.pojo.UserResponse;
@@ -31,6 +31,6 @@ public class AddUserTest {
                 .hasName(user.getName())
                 .hasJab(user.getJob());
 
-        response.then().body(JsonSchemaValidator.matchesJsonSchema(new File(FrameworkConstants.getUserSchema())));
+        response.then().body(JsonSchemaValidator.matchesJsonSchema(new File(ReqResConstants.getUserSchema())));
     }
 }
