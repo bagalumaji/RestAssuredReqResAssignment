@@ -6,7 +6,7 @@ import com.bagal.constants.ReqResConstants;
 import com.bagal.datasupplier.DataSuppliers;
 import com.bagal.pojo.User;
 import com.bagal.pojo.UserResponse;
-import com.bagal.rest.Rest;
+import com.bagal.rest.RequestBuilder;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -18,7 +18,7 @@ import static com.bagal.config.ReqResConfigFactory.getConfig;
 public class AddUserTest {
     @Test(dataProvider = "getData",dataProviderClass = DataSuppliers.class)
     public void addUserTest(User user) {
-        Response response = Rest.POST(user);
+        Response response = RequestBuilder.POST(user);
         ResponseAssert
                 .verifyThat(response)
                 .isSuccessfulPostResponse()
