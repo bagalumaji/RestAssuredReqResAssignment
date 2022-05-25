@@ -1,6 +1,6 @@
 Prerequisites
 
->=JDK11 installed
+JDK11 installed
 
 execution:
       1.cmd
